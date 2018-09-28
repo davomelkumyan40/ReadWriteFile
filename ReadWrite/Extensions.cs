@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +24,8 @@ namespace ReadWrite
 
         public static void ToSave(this List<Student> students, string path)
         {
-            StreamWriter writer = File.CreateText(path);
+            StreamWriter writer = new StreamWriter(path, true);
+            //StreamWriter writer = File.CreateText(path);
              
             foreach (var item in students)
             {
@@ -36,6 +37,3 @@ namespace ReadWrite
             writer.Close();
         }
 
-        
-    }
-}
